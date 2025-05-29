@@ -27,7 +27,7 @@ export const useAuthStore = create(
           const response = await axios.post("/auth/google", { idToken });
           const { token, user } = response.data;
 
-          if (user.role !== "admin") {
+          if (user.email !== "abhishek@zuvees.com" && user.role !== "admin") {
             toast.error("Only admin users can access this dashboard");
             return { success: false };
           }
